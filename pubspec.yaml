@@ -1,7 +1,7 @@
 name: cairo
 description: Dart bindings to the Cairo C graphics library
-version: 1.0.0
-# homepage: https://www.example.com
+version: 1.0.1
+repository: https://github.com/manim-web/cairo.dart
 
 environment:
   sdk: ">=2.14.4 <3.0.0"
@@ -19,7 +19,7 @@ ffigen:
   name: Cairo
   description: Cairo Dart bindings
 
-  output: "lib/src/third-party/cairo/generated_bindings.dart"
+  output: "lib/src/cairo/generated_bindings.dart"
   sort: true
 
   headers:

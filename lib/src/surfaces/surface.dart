@@ -4,8 +4,8 @@ import 'dart:math';
 import 'package:cairo/src/helpers/bezier.dart';
 import 'package:cairo/src/helpers/colors.dart';
 import 'package:cairo/src/helpers/matrix.dart';
-import 'package:cairo/src/third-party/cairo/generated_bindings.dart';
-import 'package:cairo/src/third-party/cairo/main.dart';
+import 'package:cairo/src/cairo/generated_bindings.dart';
+import 'package:cairo/src/cairo/main.dart';
 import 'package:ffi/ffi.dart';
 
 abstract class Surface {

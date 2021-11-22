@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 import 'package:cairo/src/surfaces/surface.dart';
-import 'package:cairo/src/third-party/cairo/main.dart';
+import 'package:cairo/src/cairo/main.dart';
 
 enum ImageFormat { ARGB32, RGB24, A8, A1, RGB16_565, RGB30, RGB96F, RGBA128F }
 

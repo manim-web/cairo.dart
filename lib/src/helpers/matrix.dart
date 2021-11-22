@@ -1,6 +1,6 @@
 import 'dart:ffi';
 
-import 'package:cairo/src/third-party/cairo/main.dart';
+import 'package:cairo/src/cairo/main.dart';
 import 'package:ffi/ffi.dart';
 
 class Matrix {

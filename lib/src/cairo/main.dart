@@ -1,9 +1,9 @@
 import 'dart:ffi';
 import 'dart:io';
 
-import 'package:cairo/src/third-party/cairo/generated_bindings.dart';
+import 'package:cairo/src/cairo/generated_bindings.dart';
 
-export 'package:cairo/src/third-party/cairo/generated_bindings.dart' hide Cairo;
+export 'package:cairo/src/cairo/generated_bindings.dart' hide Cairo;
 
 class CairoLib {
   static late Cairo cairo;
