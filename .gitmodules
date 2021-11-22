@@ -1,0 +1,4 @@
+
+[submodule "third-party/cairo"]
+	path = third-party/cairo
+	url = https://github.com/freedesktop/cairo
