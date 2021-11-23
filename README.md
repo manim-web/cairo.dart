@@ -11,7 +11,17 @@ Dart bindings to the Cairo C graphics library.
 
 ## Getting started
 
-Currently, you have to compile Cairo directly. However, it may be changed in the future.
+### 1. Download Cairo
+
+Detailed on [cairo's website](https://cairographics.org/download/)
+
+### 2. Install
+
+```bash
+dart pub install cairo
+```
+
+### 3. That's all, enjoy!
 
 ## Usage
 
