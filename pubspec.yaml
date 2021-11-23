@@ -1,6 +1,6 @@
 name: cairo
 description: Dart bindings to the Cairo C graphics library
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/manim-web/cairo.dart
 
 environment:
