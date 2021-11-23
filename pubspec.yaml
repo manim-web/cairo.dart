@@ -8,10 +8,11 @@ environment:
 
 dependencies:
   ffi: ^1.1.2
+  http: ^0.13.4
+  path: ^1.8.0
 
 dev_dependencies:
   lints: ^1.0.0
-  process_run: ^0.12.2+2
   yaml: ^3.1.0
   ffigen: ^4.1.2
 
@@ -24,7 +25,8 @@ ffigen:
 
   headers:
     entry-points:
-      - "third-party/cairo/src/cairo.h"
+      - "third-party/cairo.h"
+      - "third-party/cairo-boilerplate.h"
 
   comments:
     style: any

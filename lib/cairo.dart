@@ -1,3 +1,5 @@
+library cairo;
+
 export 'package:cairo/src/surfaces/surface.dart';
 export 'package:cairo/src/surfaces/image_surface.dart';
 

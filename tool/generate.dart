@@ -1,16 +1,41 @@
 import 'dart:io';
 
-import 'package:process_run/shell.dart';
-import 'package:yaml/yaml.dart';
+import 'package:path/path.dart';
+import 'package:ffigen/ffigen.dart';
+import 'package:ffigen/src/executables/ffigen.dart';
+import 'package:http/http.dart';
+
+final headerFiles = <String>[
+  'src/cairo.h',
+  'src/cairo-deprecated.h',
+  'src/cairo-version.h'
+];
+final githubUrl = 'https://raw.githubusercontent.com/freedesktop/cairo/master';
 
 void main() async {
-  final shell = Shell();
-  final yamlFile = await File('./pubspec.yaml').readAsString();
-  final file = loadYaml(yamlFile)['ffigen']['output'] as String;
+  final config = getConfigFromPubspec();
+  final library = parse(config);
 
-  //? Get latest cairo version
+  final cairoDir = await Directory('./third-party').create();
 
-  await shell.run('dart run ffigen');
+  final http = Client();
+  for (final fileName in headerFiles) {
+    final url = Uri.parse('$githubUrl/$fileName');
+    final data = await http.get(url);
 
-  await shell.run('dart format $file');
+    await File(join(cairoDir.path, basename(fileName)))
+        .writeAsString(data.body);
+  }
+
+  final startFile = File(join(cairoDir.path, 'cairo.h'));
+
+  await startFile.writeAsString(
+    (await startFile.readAsString()).replaceFirst(
+      '#include "cairo-features.h"',
+      '#define CAIRO_HAS_PNG_FUNCTIONS 1',
+    ),
+  );
+
+  final out = File(config.output);
+  library.generateFile(out);
 }

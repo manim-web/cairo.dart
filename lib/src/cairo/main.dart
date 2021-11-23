@@ -12,9 +12,8 @@ class CairoLib {
   //? Automatically load the library if not done?
   static load([String? libFile]) {
     if (libFile == null) {
-      libFile = '/usr/local/lib/libcairo.so'; // on linux
+      libFile = 'libcairo.so'; // on linux
 
-      // TODO: figure out where those files are located
 
       if (Platform.isMacOS) {
         libFile = 'cairo.dylib';
